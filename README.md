@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Práctica 1 TODO List
 
 _Práctica 1 TODO List: Dorian Desings_
 
