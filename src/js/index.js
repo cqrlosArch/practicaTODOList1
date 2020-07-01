@@ -32,7 +32,7 @@ const countDown = () => {
 
       if (limitTime < 0) {
         clearInterval(countDownTempo);
-        c.innerHTML = `<h3>${finalMessage}</h3>`;
+        c.innerHTML = `<h3>Ya llegó la hora!!</h3>`;
       }
     }, 1000);
   });
