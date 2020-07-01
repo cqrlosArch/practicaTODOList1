@@ -1,0 +1,35 @@
+@import "../base/base";
+.list-tasks {
+  margin: 1rem 0;
+}
+.task-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+.red {
+  background-color: #ed2121;
+}
+.green {
+  background-color: #33db37;
+}
+.yellow {
+  background-color: #e7f11d;
+}
+.count-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.count{
+  font-size: 12px;
+ margin-right: 2rem;
+}
+.close{
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+doctype
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(content='text/html; charset=UTF-8; X-Content-Type-Options=nosniff' http-equiv='Content-Type')
+        title Document
+    body
+        header
+          h1.title Práctica 1 - Todo List
+        form#form-tasks
+          input.input(type="text" name="task" placeholder="Type a Task")
+          div.buttons
+            button.btn-color.red(name='color' value='red' type="button") Red
+            button.btn-color.green(name='color' value='green' type="button") Green
+            button.btn-color.yellow(name='color' value='yellow' type="button") Yellow
+          input(type="date", name="date" )
+          button(type="submit").btn-send Send
+        div.list-tasks
