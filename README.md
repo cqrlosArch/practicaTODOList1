@@ -4,7 +4,7 @@ _Práctica 1 TODO List: Dorian Desings_
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_En la carpeta /src se encuentra el proyecto en desarrollo, y en la carpeta /dist en producción
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
