@@ -132,11 +132,13 @@
   .title {
     font-size: 1.2rem;
   }
+ 
   #form-tasks {
     flex-direction: column;
     justify-content: center;
     align-content: center;
     height: 400px;
+    width: 100%;
   }
 
   #form-tasks .input,
@@ -175,7 +177,7 @@
     
   }
   #form-tasks .buttons .btn-color {
-      width:180px;
+      width:100%;
       margin: 0 1rem;
   }
 }

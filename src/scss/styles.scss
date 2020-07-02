@@ -19,3 +19,15 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media screen and (max-width: 850px) {
+    body{
+        max-width: 95%;  
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        width: 100%;  
+        padding: 0;
+    }
+}
