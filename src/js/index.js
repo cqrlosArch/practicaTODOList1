@@ -6,6 +6,22 @@ import { nanoid } from "nanoid";
 //Variables globales
 const d = document;
 let colorTask = "";
+let currentDate=''
+
+//Establece atributo de fecha min en input Date
+const minDate = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month =
+    today.getMonth() + 1 > 9
+      ? today.getMonth() + 1
+      : `0${today.getMonth() + 1}`;
+  const day = today.getDate() + 1 > 9 ? today.getDate() : `0${today.getDate()}`;
+  const minDate = `${year}-${month}-${day}`;
+  currentDate=minDate;
+  const $date = d.getElementById("date");
+  $date.setAttribute("min", minDate);
+};
 
 //Establece un temporizador en cada tarea
 const countDown = () => {
@@ -108,7 +124,8 @@ const submitForm = (form) => {
     if (
       e.target.task.value !== "" &&
       e.target.date.value !== "" &&
-      colorTask !== ""
+      colorTask !== "" &&
+      e.target.date.value >= currentDate
     ) {
       if (e.target === $form) {
         const newTask = {
@@ -121,19 +138,19 @@ const submitForm = (form) => {
         renderTasks();
         resetForm($form);
       }
-    }else{
-      $form.classList.add('error')
+    } else {
+      $form.classList.add("error");
       setTimeout(() => {
-        $form.classList.remove('error')
+        $form.classList.remove("error");
       }, 3000);
     }
-    
   });
 };
 
 //Inicio app a la carga del DOM
 d.addEventListener("DOMContentLoaded", () => {
   renderTasks();
+  minDate();
   setColorTask(".btn-color");
   submitForm("form-tasks");
   removeTask(".close");
