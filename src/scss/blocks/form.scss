@@ -7,7 +7,7 @@
   text-transform: uppercase;
 }
 
-#form-tasks{
+#form-tasks {
   display: flex;
   background-color: $form-color;
   height: 200px;
@@ -15,8 +15,6 @@
   align-items: center;
   flex-wrap: wrap;
   border-radius: 10px;
-
- 
 
   .input {
     width: 80%;
@@ -28,8 +26,8 @@
     font-size: 14px;
   }
 
-  .input:focus{
-    border-bottom: 2px  rgba(88, 44, 77,.6);
+  .input:focus {
+    border-bottom: 2px rgba(88, 44, 77, 0.6);
   }
 
   .buttons {
@@ -53,16 +51,14 @@
       letter-spacing: 0.2rem;
       box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
-
     }
 
-    .active{
-      border:2px solid #fff;
+    .active {
+      border: 2px solid #fff;
       box-sizing: border-box;
-      scale: .98;
+      scale: 0.98;
       background-color: rgba(0, 0, 0, 0.6);
     }
-
   }
 
   & input[type="date"] {
@@ -73,7 +69,6 @@
     border-radius: 5px;
     color: rgba(0, 0, 0, 0.7);
     padding-left: 2rem;
-    
   }
   .btn-send {
     border-radius: 10px;
@@ -86,6 +81,12 @@
     margin-right: 1.5rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      background-color: rgb(20, 5, 17);
+      color:#fff;
+
+    }
   }
 
   .red {
@@ -114,55 +115,64 @@
   }
 }
 
-
-.error::before{
+.error::before {
   content: "Enter all fields";
   position: fixed;
-  top:150px;
+  top: 150px;
   left: 600px;
-  color:rgba(240, 240, 240, 0.911);
+  color: rgba(240, 240, 240, 0.911);
   background-color: rgba(221, 14, 14, 0.8);
   border-radius: 3px;
   font-size: 14px;
   font-weight: bold;
-  padding: .5rem 1rem;
-
+  padding: 0.5rem 1rem;
 }
 
-
-@media screen and (max-width: 850px){
-  .title{
+@media screen and (max-width: 850px) {
+  .title {
     font-size: 1.2rem;
   }
-  #form-tasks{
+  #form-tasks {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    height: 300px;
+    height: 400px;
   }
 
   #form-tasks .input,
   #form-tasks .buttons,
   #form-tasks input[type="date"],
   #form-tasks .btn-send,
-  .task-container{
+  .task-container {
     width: 80%;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
+    max-height: 200px;
   }
 
-  .count-container{
+  .count-container {
     width: 80%;
-    margin: .5rem auto;
+    margin: 0.5rem auto;
   }
 
-  .task-container h3{
+  .task-container h3 {
     font-size: 14px;
   }
-  .task-container .countDown{
+  .task-container .countDown {
     font-size: 12px;
   }
-  .task-container .count{
+  .task-container .count {
     margin: 0 1rem;
   }
-  
+}
+
+@media screen and (max-width: 600px) {
+  #form-tasks .buttons {
+    flex-direction: column;
+    height: 180px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #form-tasks .buttons .btn-color {
+      width:200px;
+  }
 }
