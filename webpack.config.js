@@ -38,6 +38,17 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg|ico)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'static/',
+          publicPath: 'static/',
+          useRelativePath: true,
+        },
+
+      },
       { 
         test: /\.pug$/,
         use: ['pug-loader']

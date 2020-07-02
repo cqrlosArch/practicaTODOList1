@@ -1,4 +1,5 @@
 import "../scss/styles.scss";
+import  '../static/favicon.ico'
 
 //Generador de IDs
 import { nanoid } from "nanoid";

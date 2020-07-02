@@ -12,8 +12,8 @@
   "author": "cqrlosArch",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/cqrlosArch/practicaTODOList1.git"
+    "type": "git",
+    "url": "https://github.com/cqrlosArch/practicaTODOList1.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -38,6 +38,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "file-loader": "^6.0.0",
     "nanoid": "^3.1.10"
   }
 }
