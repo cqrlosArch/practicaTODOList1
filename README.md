@@ -1,12 +1,13 @@
 # Práctica 1 TODO List
 
-_Práctica 1 TODO List: Dorian Desings_
+ Práctica 1 TODO List: Dorian Desings_
+ [LIVE](https://cqrlosarch.github.io/)
 
 ## Comenzando 🚀
 
-_En la carpeta /src se encuentra el proyecto en desarrollo, y en la carpeta /dist en producción
+ En la carpeta /src se encuentra el proyecto en desarrollo, y en la carpeta /dist en producción
 
-_Para seguir el desarrollo con webpack usar los script:
+ Para seguir el desarrollo con webpack usar los script:
 1. Clonar el Proyecto
 2. Use ``cd practica_todolist``
 4. Para desarrollo: ``npm run start:dev`` ó ``yarn start:dev``
