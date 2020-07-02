@@ -1,5 +1,5 @@
 import "../scss/styles.scss";
-import  '../static/favicon.ico'
+import "../static/favicon.ico";
 
 //Generador de IDs
 import { nanoid } from "nanoid";
@@ -167,7 +167,7 @@ const submitForm = (form) => {
       $form.classList.add("error");
       setTimeout(() => {
         $form.classList.remove("error");
-      }, 3000);
+      }, 1500);
     }
   });
 };
