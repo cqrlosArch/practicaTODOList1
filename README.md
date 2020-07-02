@@ -1,7 +1,8 @@
 # Práctica 1 TODO List
 
- Práctica 1 TODO List: Dorian Desings
- LIVE (https://cqrlosarch.github.io/)
+ - Práctica 1 TODO List: Dorian Desings.
+
+ - LIVE demo (https://cqrlosarch.github.io/)
 
 ## Comenzando 🚀
 
