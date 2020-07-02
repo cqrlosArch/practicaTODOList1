@@ -43,9 +43,10 @@ const getDateFull = (countDownDate) => {
 const initCount = (count) => {
   const $countDown = d.querySelectorAll(count);
   $countDown.forEach((c) => {
-    console.log();
     const countDownDate = new Date(c.getAttribute("data-fech")).getTime();
-    const [days, hours, minutes, seconds, limitTime] = getDateFull(countDownDate);
+    const [days, hours, minutes, seconds, limitTime] = getDateFull(
+      countDownDate
+    );
 
     if (limitTime > 0) {
       c.innerHTML = `<h3 class="countDown">Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
@@ -60,7 +61,6 @@ const countDown = () => {
   const $countDown = d.querySelectorAll(".count");
   initCount(".count");
   $countDown.forEach((c) => {
-    console.log();
     const countDownDate = new Date(c.getAttribute("data-fech")).getTime();
     let countDownTempo = setInterval(() => {
       const [days, hours, minutes, seconds, limitTime] = getDateFull(
@@ -123,7 +123,6 @@ const setColorTask = (btns) => {
 const removeTask = (task) => {
   d.addEventListener("click", (e) => {
     if (e.target.matches(task)) {
-      console.log(e.target.dataset.id);
       localStorage.removeItem(e.target.dataset.id);
       renderTasks();
     }
