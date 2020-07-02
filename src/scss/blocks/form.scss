@@ -128,3 +128,41 @@
   padding: .5rem 1rem;
 
 }
+
+
+@media screen and (max-width: 850px){
+  .title{
+    font-size: 1.2rem;
+  }
+  #form-tasks{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+  }
+
+  #form-tasks .input,
+  #form-tasks .buttons,
+  #form-tasks input[type="date"],
+  #form-tasks .btn-send,
+  .task-container{
+    width: 80%;
+    margin: .5rem auto;
+  }
+
+  .count-container{
+    width: 80%;
+    margin: .5rem auto;
+  }
+
+  .task-container h3{
+    font-size: 14px;
+  }
+  .task-container .countDown{
+    font-size: 12px;
+  }
+  .task-container .count{
+    margin: 0 1rem;
+  }
+  
+}

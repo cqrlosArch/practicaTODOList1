@@ -48,7 +48,7 @@ const initCount = (count) => {
     const [days, hours, minutes, seconds, limitTime] = getDateFull(countDownDate);
 
     if (limitTime > 0) {
-      c.innerHTML = `<h3>Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
+      c.innerHTML = `<h3 class="countDown">Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
     } else {
       c.innerHTML = `<h3>Ya llegó la hora!!</h3>`;
     }
@@ -67,7 +67,7 @@ const countDown = () => {
         countDownDate
       );
 
-      c.innerHTML = `<h3>Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
+      c.innerHTML = `<h3 class="countDown">Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
 
       if (limitTime < 0) {
         clearInterval(countDownTempo);
@@ -93,7 +93,7 @@ const renderTasks = () => {
         <h3>${task.name}</h3>
        <div class="count-container">
         <div class="count" data-fech="${task.date}">
-        <h3>Faltan: '' días '' horas '' minutos '' segundos</h3>
+        <h3 class="countDown">Faltan: '' días '' horas '' minutos '' segundos</h3>
         </div>
         <div class="close" data-id="${task.id}">&#x2716;</div>
        </div>
