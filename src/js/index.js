@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 //Variables globales
 const d = document;
 let colorTask = "";
-let currentDate=''
+let currentDate = "";
 
 //Establece atributo de fecha min en input Date
 const minDate = () => {
@@ -18,31 +18,54 @@ const minDate = () => {
       : `0${today.getMonth() + 1}`;
   const day = today.getDate() + 1 > 9 ? today.getDate() : `0${today.getDate()}`;
   const minDate = `${year}-${month}-${day}`;
-  currentDate=minDate;
+  currentDate = minDate;
   const $date = d.getElementById("date");
   $date.setAttribute("min", minDate);
+};
+
+//Obtención fecha completa
+const getDateFull = (countDownDate) => {
+  let now = new Date().getTime(),
+    limitTime = countDownDate - now,
+    days = Math.floor(limitTime / (1000 * 60 * 60 * 24)),
+    hours = (
+      "0" + Math.floor((limitTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    ).slice(-2),
+    minutes = (
+      "0" + Math.floor((limitTime % (1000 * 60 * 60)) / (1000 * 60))
+    ).slice(-2),
+    seconds = ("0" + Math.floor((limitTime % (1000 * 60)) / 1000)).slice(-2);
+
+  return [days, hours, minutes, seconds, limitTime];
+};
+
+//Inicio del contador
+const initCount = (count) => {
+  const $countDown = d.querySelectorAll(count);
+  $countDown.forEach((c) => {
+    console.log();
+    const countDownDate = new Date(c.getAttribute("data-fech")).getTime();
+    const [days, hours, minutes, seconds, limitTime] = getDateFull(countDownDate);
+
+    if (limitTime > 0) {
+      c.innerHTML = `<h3>Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
+    } else {
+      c.innerHTML = `<h3>Ya llegó la hora!!</h3>`;
+    }
+  });
 };
 
 //Establece un temporizador en cada tarea
 const countDown = () => {
   const $countDown = d.querySelectorAll(".count");
+  initCount(".count");
   $countDown.forEach((c) => {
     console.log();
     const countDownDate = new Date(c.getAttribute("data-fech")).getTime();
     let countDownTempo = setInterval(() => {
-      let now = new Date().getTime(),
-        limitTime = countDownDate - now,
-        days = Math.floor(limitTime / (1000 * 60 * 60 * 24)),
-        hours = (
-          "0" +
-          Math.floor((limitTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        ).slice(-2),
-        minutes = (
-          "0" + Math.floor((limitTime % (1000 * 60 * 60)) / (1000 * 60))
-        ).slice(-2),
-        seconds = ("0" + Math.floor((limitTime % (1000 * 60)) / 1000)).slice(
-          -2
-        );
+      const [days, hours, minutes, seconds, limitTime] = getDateFull(
+        countDownDate
+      );
 
       c.innerHTML = `<h3>Faltan: ${days} días ${hours} horas ${minutes} minutos ${seconds} segundos</h3>`;
 
@@ -69,7 +92,9 @@ const renderTasks = () => {
       $div.innerHTML = `
         <h3>${task.name}</h3>
        <div class="count-container">
-        <div class="count" data-fech="${task.date}"></div>
+        <div class="count" data-fech="${task.date}">
+        <h3>Faltan: '' días '' horas '' minutos '' segundos</h3>
+        </div>
         <div class="close" data-id="${task.id}">&#x2716;</div>
        </div>
       `;
