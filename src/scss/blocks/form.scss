@@ -169,10 +169,13 @@
   #form-tasks .buttons {
     flex-direction: column;
     height: 180px;
+    width: 80%;
     justify-content: space-evenly;
     align-items: center;
+    
   }
   #form-tasks .buttons .btn-color {
-      width:200px;
+      width:180px;
+      margin: 0 1rem;
   }
 }
