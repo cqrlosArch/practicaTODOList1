@@ -1,32 +1,5 @@
+@import "./variables/colors.scss";
 @import "./base/base";
+@import "./mixins/error";
 @import "./blocks/form.scss";
 @import "./blocks/tasks.scss";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: $primary-color;
-  padding: 3rem;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-@media screen and (max-width: 850px) {
-  body {
-    max-width: 95%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    width: 100%;
-    padding: 0;
-  }
-}

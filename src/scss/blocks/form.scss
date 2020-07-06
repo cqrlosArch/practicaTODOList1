@@ -1,18 +1,4 @@
-@import "../base/base";
-
-@mixin animation-mixin($name, $color1, $color2) {
-  @keyframes #{$name} {
-    0% {
-      transform: translate(0, -100%);
-    }
-
-    100% {
-      transform: translate(0, 0);
-    }
-  }
-}
-
-@include animation-mixin(colores, skyblue, pink);
+@include animation-mixin(error, skyblue, pink);
 
 .title {
   text-align: center;
@@ -57,7 +43,7 @@
       padding: 0.5rem 1rem;
       background-color: $btn-color;
       text-transform: uppercase;
-      border: none;
+      border: 2px solid transparent;
       outline: none;
       margin-right: 0.5rem;
       cursor: pointer;
@@ -69,7 +55,6 @@
 
     .active {
       border: 2px solid #fff;
-      box-sizing: border-box;
       scale: 0.98;
       background-color: rgba(0, 0, 0, 0.6);
     }
@@ -105,14 +90,26 @@
   .red {
     font-weight: bold;
     color: #ed2121;
+    &:hover {
+      background-color: #ed2121;
+      color: #fff;
+    }
   }
   .green {
     font-weight: bold;
     color: #33db37;
+    &:hover {
+      background-color: #33db37;
+      color: #fff;
+    }
   }
   .yellow {
     font-weight: bold;
     color: #e7f11d;
+    &:hover {
+      background-color: #e7f11d;
+      color: #fff;
+    }
   }
   .red:hover {
     background-color: #ed2121;
@@ -130,17 +127,27 @@
 
 .error::before {
   content: "Enter all fields";
-  animation: colores 2s ease infinite;
+  animation: error 2s ease infinite;
   position: fixed;
   top: 150px;
-  left: 600px;
+  left: 50vw;
   color: rgba(240, 240, 240, 0.911);
   background-color: rgba(221, 14, 14, 0.8);
   border-radius: 3px;
   font-size: 14px;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  animation: colores 2s ease infinite;
+  animation: error 2s ease infinite;
+
+  @media screen and (max-width: 850px) {
+    top: 200px;
+    left: 50vw;
+  }
+  @media screen and (max-width: 600px) {
+    top: 100px;
+    left: 50vw;
+    
+  }
 }
 
 @media screen and (max-width: 850px) {

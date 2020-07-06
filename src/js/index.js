@@ -26,16 +26,18 @@ const minDate = () => {
 
 //Obtención fecha completa
 const getDateFull = (countDownDate) => {
-  let now = new Date().getTime(),
-    limitTime = countDownDate - now,
-    days = Math.floor(limitTime / (1000 * 60 * 60 * 24)),
-    hours = (
-      "0" + Math.floor((limitTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    ).slice(-2),
-    minutes = (
-      "0" + Math.floor((limitTime % (1000 * 60 * 60)) / (1000 * 60))
-    ).slice(-2),
-    seconds = ("0" + Math.floor((limitTime % (1000 * 60)) / 1000)).slice(-2);
+  const now = new Date().getTime();
+  const limitTime = countDownDate - now;
+  const days = Math.floor(limitTime / (1000 * 60 * 60 * 24));
+  const hours = (
+    "0" + Math.floor((limitTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  ).slice(-2);
+  const minutes = (
+    "0" + Math.floor((limitTime % (1000 * 60 * 60)) / (1000 * 60))
+  ).slice(-2);
+  const seconds = ("0" + Math.floor((limitTime % (1000 * 60)) / 1000)).slice(
+    -2
+  );
 
   return [days, hours, minutes, seconds, limitTime];
 };
